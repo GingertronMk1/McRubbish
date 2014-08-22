@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>McRubbish Exp (Net)</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<link rel='stylesheet' media='screen and (max-width: 500px)' href='Stylesheets/Mobile.css'/>
+		<link rel='stylesheet' media='screen and (min-width: 501px)' href='Stylesheets/Desktop.css'/>	
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<script src="Javascript/Google Maps/GMaps.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="Javascript/scripts_exp.js"></script>
+		<script src="Javascript/Image Manip/load-image.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div id="main">
+			<div id="header">
+				<div class="mainheader" id="headersubmit" onclick="toggleUpload()">
+					Submit
+					<div class="underliner" id="ulleft">
+					</div>
+				</div>
+				<div class="mainheader" id="headerabout" onclick="toggleAbout()">
+					About
+					<div class="underliner" id="ulright">
+					</div>
+				</div>
+				<div id="logo">
+					<img id="logopic" src="Pictures/Logo_Main.png"></img>
+				</div>
+			</div>
+		</div>
+		<div class="modal" id="uploadpage" style="display: none;">
+			<div id="uploadheader">
+				<div class="modalheader" id="uploadconfirm" onclick="uploadConfirm()">
+					Confirm
+					<div class="underliner">
+					</div>
+				</div>
+				<div class="modalheader" id="uploadcancel" onclick="uploadOff()">
+					Cancel
+					<div class="underliner">
+					</div>
+				</div>
+			</div>
+			<div>
+				<form action="Upload.php" enctype="multipart/form-data" method="POST" id="uploadform">
+					<div id="infobox">
+						<table id="inputtable">
+							<tr>
+								<td>Name:</td>
+								<td colspan="2" style="width:80%"><input class="textin" id="username" name="username" type="text" maxLength="16" placeholder="16 characters or fewer" style="width:99%"/></td>
+							</tr>
+							<tr>
+								<td>Title:</td>
+								<td colspan="2"><input class="textin" id="title" type="text" name="title" placeholder="What kind of rubbish?" style="width:99%"/></td>
+							</tr>
+							<tr>
+								<td rowspan="1">Description:</td>			
+								<td colspan="2" rowspan="6"><textarea id="description" placeholder="A more detailed description of how you found this rubbish." rows="6" columns="2" name="description"></textarea></td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+							<tr></tr>
+							<tr></tr>
+							<tr></tr>
+							<tr>
+								<td>Location:</td>
+								<td><input class="textin" id="latitude" name="gpslat" type="text" placeholder="Latitude" style="width:99%"/></td>
+								<td><input class="textin" id= "longitude" name="gpslong" type="text" placeholder="Longitude" style="width:99%"/></td>
+							</tr>
+							<tr><td><input type="text" id="orient" name="orient" style="display:none"></input></td></tr>
+
+						</table>
+						<div id="geotagnotice">
+						<p>
+							This will autofill if your image is GeoTagged
+						</p>
+					</div>
+					</div>
+					<div id="picpreview">
+          			<input type="file" name="picture" id="file-input" accept="image/*"/>
+          				<script>
+          				document.getElementById('file-input').onchange =
+          					function (e) {
+								loadImage.parseMetaData(
+    								e.target.files[0],
+    								function (data) {
+    								    exif = data.exif
+        								if (!data.imageHead) {
+            								return;
+        								}
+										loadImage(
+											e.target.files[0],
+											function (img) {
+												document.getElementById("picpreview").appendChild(img);
+											},
+											{
+												canvas: true,
+												maxHeight: 200,
+												maxWidth: 200,
+												orientation: exif.get('Orientation'),
+											} // Options
+										);
+										latLong(exif.get('GPSLatitude'), exif.get('GPSLongitude'), exif.get('Orientation'));								
+    								},
+    								{
+        								maxMetaDataSize: 262144,
+        								disableImageHead: false
+    								}
+								);
+							};
+          				</script>
+					</div>          		</form>
+          	</div>
+		</div>
+		<div class="modal" id="aboutpage" style="display:none;">
+			<div id="aboutheader">
+					<div class="modalheader" id="aboutback" onclick="aboutOff()">
+						Back
+						<div class="underliner">
+						</div>
+					</div>
+				</div>
+			<div id="aboutbody">
+				<div class="aboutbodysection" id="aboutbodyteam">
+					<br>
+					<img id="aboutteampic" src="Pictures/BaroqueTrashbag_sansShadow.png"></img>
+					<p class="aboutbodyheader">Our Team</p>
+					<p class="aboutbodybody">Designer Oliver Hulme, developer Jack Ellis, and Charlie Witty, who will have something to say about my having given him no credit for anything.</p>
+				</div>
+				<div class="aboutbodysection" id="aboutbodyorigin">
+					<p class="aboutbodyheader">Origin</p>
+					<p class="aboutbodybody">One day, Jon Moss was bored and had some free labourers. This is the result of that combination.</p>
+					<br>
+					<br>
+					<br>
+					<br>
+					<img id="aboutoriginpic" src="Pictures/DoricBin.png"></img>
+				</div>
+				<div class="aboutbodysection" id="aboutbodymission">
+					<br>
+					<img id="aboutmissionpic" src="Pictures/RoccocoCup.png"></img>
+					<p class="aboutbodyheader">Mission</p>
+					<p class="aboutbodybody">Our mission is simple. We kill the... wait, no, that's wrong. We stop fast food rubbish, that's it!</p>
+				</div>
+			</div>
+		</div>
+    	<div style="width:100vw; height:100vh; position: fixed">
+    		<div id="map-canvas">
+    		</div>
+    	</div>
+    </body>
+</html>
