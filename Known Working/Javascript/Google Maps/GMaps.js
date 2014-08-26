@@ -29,6 +29,39 @@ var customIcon = {
   	scaledSize: new google.maps.Size(30, 30)
 	};
 
+function switchOrientation(a) {
+	switch(a) {
+		case '1':
+			return 0
+			break;
+		case '2':
+			return 0
+			break;
+		case '3':
+			return 180
+			break;
+		case '4':
+			return 180
+			break;
+		case '5':
+			return 270
+			break;
+		case '6':
+			return 270
+			break;
+		case '7':
+			return 90
+			break;
+		case '8':
+			return 90
+			break;
+		default:
+			return 0
+			break;
+	};
+    };
+
+
 downloadUrl("/Javascript/Google Maps/Map Connect.php", function(data) {
   var xml = data.responseXML;
   var markers = xml.documentElement.getElementsByTagName("marker");
