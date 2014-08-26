@@ -36,11 +36,13 @@ downloadUrl("/Javascript/Google Maps/Map Connect.php", function(data) {
     var name = markers[i].getAttribute("Username");
     var title = markers[i].getAttribute("Title");
     var type = markers[i].getAttribute("Description");
-    var imgsrc = markers[i].getAttribute("Picture");
+    var imgsrc = "'" + markers[i].getAttribute('PicFilePath') + "'";
+    console.log(imgsrc);
+    var orient = switchOrientation(markers[i].getAttribute('Orientation'));
     var point = new google.maps.LatLng(
         parseFloat(markers[i].getAttribute("Latitude")),
         0-parseFloat(markers[i].getAttribute("Longitude")));
-    var html = "<b>" + title + "</b> <br/>" + name;
+    var html = "<b>" + name + "</b> <br/> <b>" + title + "</b> <br/> <img src=" + imgsrc + " style='position: relative; max-width: 200px; max-height: 200px; -moz-transform:rotate(" + orient + "deg); -webkit-transform:rotate(" + orient + "deg); -o-transform:rotate(" + orient + "deg); -ms-transform:rotate(" + orient + "deg); margin: auto; padding: auto; clear: both; top: 50px;'/>";
     var infoWindow = new google.maps.InfoWindow;
     var icon = customIcon;
     var marker = new google.maps.Marker({
