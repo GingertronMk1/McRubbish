@@ -20,7 +20,6 @@ function bindInfoWindow(marker, map, infoWindow, html) {
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.setContent(html);
     infoWindow.setOptions(
-	zIndex: 15,
 	maxWidth: 210,
     )
     infoWindow.open(map, marker);
