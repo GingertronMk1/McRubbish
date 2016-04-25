@@ -1,224 +1,224 @@
 html, body {
-	height: 100%;
-	width: 100%;
-	margin: auto;
-	padding: auto;
-	font-family: Open Sans, sans-serif;
-	font-weight: 100;
-	color: rgb(100,100,100);
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding: auto;
+    font-family: Open Sans, sans-serif;
+    font-weight: 100;
+    color: rgb(100,100,100);
 }
 #map-canvas {
-	height: 100%;
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	position: fixed;
-	margin: auto;
-	padding: auto;
-	z-index: 0;
-	left: 0px;
-	right: 0px;
-	z-index: 1;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    margin: auto;
+    padding: auto;
+    z-index: 0;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
 }
 #main {
-	position: absolute;
-	left: 0%;
-	top: 30px;
-	right: 0%;
-	height: 60px;
-	background-color: rgba(247,247,247,0.5);
-	z-index: 2;
-	border-top: 1px solid rgba(116,116,116,0.2);
-	border-bottom: 1px solid rgba(116,116,116,0.2);
-	-moz-user-select: -moz-none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+    position: absolute;
+    left: 0%;
+    top: 30px;
+    right: 0%;
+    height: 60px;
+    background-color: rgba(247,247,247,0.5);
+    z-index: 2;
+    border-top: 1px solid rgba(116,116,116,0.2);
+    border-bottom: 1px solid rgba(116,116,116,0.2);
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 #header {
-	position: relative;
-	top: 10px;
-	width: 300px;
-	height: 45px;
-	left: 50%;
-	margin-left: -150px;
-	margin-top: -6px;
-	padding: auto;
-	z-index: 3;
-	font-size: 24px;
+    position: relative;
+    top: 10px;
+    width: 300px;
+    height: 45px;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -6px;
+    padding: auto;
+    z-index: 3;
+    font-size: 24px;
 }
 .mainheader {
-	position: absolute;
-	height: 100%;
-	top: 25%;
-	cursor: pointer;
-	text-align: center;
+    position: absolute;
+    height: 100%;
+    top: 25%;
+    cursor: pointer;
+    text-align: center;
 }
 #headersubmit {
-	left:0%;
+    left:0%;
 }
 #headerabout {
-	right: 0%;
+    right: 0%;
 }
 .underliner {
-	position: absolute;
-	opacity: 0;
-	height: 2px;
-	background-color: rgb(116,116,116);
-	bottom: -1px;
-	width: 100%
+    position: absolute;
+    opacity: 0;
+    height: 2px;
+    background-color: rgb(116,116,116);
+    bottom: -1px;
+    width: 100%
 }
 .mainheader:hover .underliner {
-	opacity: 1;
+    opacity: 1;
 }
 #logo {
-	position: absolute;
-	border-radius: 12vh;
-	width: 100px;
-	height: 100px;
-	left: 50%;
-	margin-left: -50px;
-	top: 50%;
-	margin-top: -50px;
-	z-index: 5;
-	background-color: rgba(255,255,255,0);
+    position: absolute;
+    border-radius: 12vh;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 5;
+    background-color: rgba(255,255,255,0);
 }
 #logopic {
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	left: 50%;
-	top: 50%;
-	margin: -45px -50px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin: -45px -50px;
 }
 .modal {
-	position: absolute;
-	left: 50%;
-	top: 55%;
-	margin: -240px -320px;
-	width: 640px;
-	height: 400px;
-	background-color: rgba(250,250,250,0.9);
-	z-index: 6;
-	border: 1px solid rgb(216,210,208);
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    margin: -240px -320px;
+    width: 640px;
+    height: 400px;
+    background-color: rgba(250,250,250,0.9);
+    z-index: 6;
+    border: 1px solid rgb(216,210,208);
 }
 #uploadheader {
-	position: relative;
-	width: 576px;
-	height: 40px;
-	left: 32px;
-	top: 20px;
-	margin-top: 0%;
-	font-size: 24px;
-	border-bottom: 1px solid rgb(218,218,218);
+    position: relative;
+    width: 576px;
+    height: 40px;
+    left: 32px;
+    top: 20px;
+    margin-top: 0%;
+    font-size: 24px;
+    border-bottom: 1px solid rgb(218,218,218);
 }
 .modalheader {
-	cursor: pointer;
-	height: 100%;
+    cursor: pointer;
+    height: 100%;
 }
 .modalunderliner {
-	position: absolute;
-	height: 2px;
-	width: 100%;
-	background-color: black;
-	bottom: -1px;
-	opacity: 0;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    bottom: -1px;
+    opacity: 0;
 }
 .modalheader:hover .underliner {
-	opacity: 1;
+    opacity: 1;
 }
 #uploadconfirm {
-	position: absolute;
-	left: 0%;
+    position: absolute;
+    left: 0%;
 }
 #uploadcancel {
-	position: absolute;
-	right: 0%;
+    position: absolute;
+    right: 0%;
 }
 #infobox {
-	position: absolute;
-	top: 60px;
-	left: 0px;
-	width: 399px;
-	height: 320px;
-	border-right: 1px solid rgb(218,218,218);
-	text-align: left;
-	margin: auto;
-	padding: 0;
-	font-size: 16px;
-	line-height: 16px;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 399px;
+    height: 320px;
+    border-right: 1px solid rgb(218,218,218);
+    text-align: left;
+    margin: auto;
+    padding: 0;
+    font-size: 16px;
+    line-height: 16px;
     font-family: Open Sans, sans-serif;
     font-weight: 100;
 }
 #inputtable {
-	padding-right:5%;
-	width:100%;
-	left:3%;
-	top: 5%;
-	position:relative;
-	text-align: right;
+    padding-right:5%;
+    width:100%;
+    left:3%;
+    top: 5%;
+    position:relative;
+    text-align: right;
 }
 textarea {
-   	width: 99%; 
-   	height: 100%; 
-   	resize: none; 
-   	border: 1px solid rgb(218,218,218);
-   	font-family: Open Sans, sans-serif;
+    width: 99%; 
+    height: 100%; 
+    resize: none; 
+    border: 1px solid rgb(218,218,218);
+    font-family: Open Sans, sans-serif;
 }
 .textin {
     resize: none;
     border: 1px solid rgb(218,218,218);
 }
 #picturename {
-	border: none;
+    border: none;
 }
 td {
-	padding-bottom: 5%;
+    padding-bottom: 5%;
 }
 #geotagnotice {
-	position: relative;
-	font-size: 10px;
-	top: -5%;
-	text-align: right;
-	padding-right:5%;
+    position: relative;
+    font-size: 10px;
+    top: -5%;
+    text-align: right;
+    padding-right:5%;
 }
 #file-input {
-	width: 200px;
-	max-width: 240px;
-	overflow: hidden;
+    width: 200px;
+    max-width: 240px;
+    overflow: hidden;
 }
 #picpreview {
-	position: relative;
-	top: 40px;
-	left: 400px;
-	width: 240px;
-	height: 300px;
-	text-align: center;
+    position: relative;
+    top: 40px;
+    left: 400px;
+    width: 240px;
+    height: 300px;
+    text-align: center;
 }
 #aboutheader {
-	position: relative;
-	width: 576px;
-	height: 40px;
-	left: 32px;
-	top: 20px;
-	margin-top: 0%;
-	font-size: 24px;
-	border-bottom: 1px solid rgb(218,218,218);
+    position: relative;
+    width: 576px;
+    height: 40px;
+    left: 32px;
+    top: 20px;
+    margin-top: 0%;
+    font-size: 24px;
+    border-bottom: 1px solid rgb(218,218,218);
 }
 #aboutback {
-	position: absolute;
-	left: 0%;
+    position: absolute;
+    left: 0%;
 }
 #aboutbody {
-	position: relative;
-	left: 50%;
-	top: 20px;
-	margin-left: -288px;
-	width: 576px;
-	height: 320px;
-	text-align: center;
-	font-size: 16px;
+    position: relative;
+    left: 50%;
+    top: 20px;
+    margin-left: -288px;
+    width: 576px;
+    height: 320px;
+    text-align: center;
+    font-size: 16px;
     font-family: Open Sans, sans-serif;
     font-weight: 100;
     z-index: 12;
@@ -226,45 +226,45 @@ td {
     overflow: hidden;
 }
 p {
-	line-height: 150%;
+    line-height: 150%;
 }
 .aboutbodysection {
-	position: relative;
-	top: 0%;
-	width: 192px;
-	height: 400px;
-	display: table-cell;
-	text-align: center;
+    position: relative;
+    top: 0%;
+    width: 192px;
+    height: 400px;
+    display: table-cell;
+    text-align: center;
 }
 #aboutbodyteam {
-	left: 0%;
-	padding-right: 10px;
+    left: 0%;
+    padding-right: 10px;
 }
 #aboutbodyorigin {
-	border-left: 1px solid rgb(218,218,218);
-	border-right: 1px solid rgb(218,218,218);
-	padding: 0 10px;
+    border-left: 1px solid rgb(218,218,218);
+    border-right: 1px solid rgb(218,218,218);
+    padding: 0 10px;
 }
 #aboutbodymission {
-	right: 0%;
-	padding-left: 10px;
+    right: 0%;
+    padding-left: 10px;
 }
 .aboutbodyheader {
-	font-weight: 700;
+    font-weight: 700;
 }
 .aboutbodybody {
-	font-size: 14px;
-	line-height: 100%;
-	margin: 0 10px;
+    font-size: 14px;
+    line-height: 100%;
+    margin: 0 10px;
 }
 #aboutteampic {
-	height: 100px;
+    height: 100px;
 }
 #aboutoriginpic {
-	position: relative; 
-	top: 20%; 
-	height:100px;
+    position: relative; 
+    top: 20%; 
+    height:100px;
 }
 #aboutmissionpic {
-	height: 100px;
+    height: 100px;
 }
